@@ -1,0 +1,117 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("All Records", "Index", "Address")</li>
+                <li>@Html.ActionLink("Enter Record", "Create", "Address")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+@model IP_Tracking.Models.Address
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error ! : </strong>   @TempData["InfoMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>&times;</span>
+        </button>
+    </div>
+}
+<div>
+    <table border="3" style="font-size:large; margin:auto; margin-top:5%;">
+        <tr>
+            <td colspan="4" style="font-size:x-large;text-align:center;padding:10px;color:green;">Record Details</td>
+        </tr>
+        <tr>
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.ITR_Section)
+            </td>
+
+            <td width="30%" style="padding:10px;color:blue;">
+                @Html.DisplayFor(model => model.ITR_Section)
+            </td>
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.IP_Address)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.IP_Address)
+            </td>
+        </tr>
+        <tr>
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.MAC_Address)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.MAC_Address)
+            </td>
+
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.Employee_Name)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.Employee_Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.Location)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.Location)
+            </td>
+
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.IO_Number)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.IO_Number)
+            </td>
+        </tr>
+
+        <tr>
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.Switchport_No)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.Switchport_No)
+            </td>
+
+            <td width="20%" style="padding:10px;">
+                @Html.DisplayNameFor(model => model.Domain_Name)
+            </td>
+
+            <td width="30%" style="padding: 10px; color: blue;">
+                @Html.DisplayFor(model => model.Domain_Name)
+            </td>
+            </td>
+
+</table>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
